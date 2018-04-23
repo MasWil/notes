@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <script src="p5.dom.js"></script>
+    <script src="p5.min.js"></script>
+    <script src="snakeV2.js"></script>
+    <script src="p5.sound.js"></script>
+  </head>
+  <body>
+    <h1 id="yourScore">Your Score:</h1>
+    <script>
+    var s;
+    var scl = 20; //scl stands for scale
+    var food;
+    var fRate = 10; //This is an interger that store the frame rate
+    var w = 600;
+    var h = 560;
+    //var eatSound;
+    
+      //function preload() {
+        //eatSound = loadSound('assets/chipeatting.mp3')
+       // mySound = loadSound('chieatting.mp3');
+      //}
+    
+      function setup() {
+        createCanvas(w,h);
+        s = new Snake(); //object constructor
+        foodLocation();
+      }
+      
+      function draw() {
+        frameRate(fRate);
+        background(255,255,0);
+        s.show(); //Show the snake
+        s.update(); //Update the snakes direction
+        s.death();
+        fill(255, 0, 0); //This is for the food
+        rect(food.x, food.y, scl, scl); //This is for the food shape
+        if (s.eat(food)) { //We run the eat function in the object constructor (snake)
+          foodLocation(); //Run this function hen the eat funcvtion in the object constructor is true
+        }
+      }
+
+      function foodLocation() {
+        var cols = floor (width / scl);
+        var rows = floor (height / scl);
+        food = createVector(floor(random(cols)), floor(random(rows))); //Starting point and where does it end at
+        food.mult(scl);
+      }
+      
+      function keyPressed() {
+        if (keyCode === UP_ARROW) {
+          s.dir(0, -1); //Coordinates are opposite from math, -1 (y) moves it up
+        }
+        else if (keyCode === DOWN_ARROW) { //(1 (y) moves it downwards
+          s.dir(0,1);
+        }
+        else if (keyCode === LEFT_ARROW) { //-1 (x) movies it to the left
+          s.dir(-1,0);
+        }
+        else if (keyCode === RIGHT_ARROW) { //1 (x) movies it to the right
+          s.dir(1,0);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <script src="script.js"></script>
+    <style>
+      #showTotal {
+        height:100px;
+        width:100px;
+        background-color:red;
+      }
+    </style>
+    <script>
+      var b = localStorage.getItem("totalPls");
+      document.getElementById('showFinalTotal').innerHTML="$" + b;
+      var tax = b * 0.04712;
+      document.getElementById('tax').innerHTML="$" + tax.toFixed(2);
+      var grandTotal = b* 1.04712;
+      document.getElementById('grandTotal').innerHTML = "$" + grandTotal.toFixed(2);
+    </script>
+  </head>
+  <body>
+    <button onclick="showTotal()">Total + tax</button>
+    <span id="showFinalTotal"></span>
+    <span id ="tax" ></span>
+    <span id="grandTotal"></span>
+  </body>
+</html>

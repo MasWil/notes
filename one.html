@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      #order1 {
+        height:250px;
+        width:250px;
+        background-image:url("https://www.rvcj.com/wp-content/uploads/2015/05/720-gk_gq.jpg");
+        background-size:cover;
+      }
+      #water {
+        height:50px;
+        width:250px;
+        background-color:white;
+        }
+        #classWork {
+          width:50px;
+        }
+        #classWork2 {
+          width:50px;
+        }
+      #order2 {
+        height:250px;
+        width:500px;
+        background-image:url("http://www.lifejuiceshop.com/images/4line3.png");
+        background-size:cover;
+      }
+      #juice {
+        height:50px;
+        width:250px;
+        background-color:white;
+        }
+        #order3 {
+          height:250px;
+          width:500px;
+          background-size:cover;
+        }
+        #classWork3 {
+          width:50px;
+        }
+        #gator {
+          height:250px;
+          width:250px;
+        }
+    </style>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div id="order1">
+          <div id="water"></div>
+    <p id="food"></p>
+    <input type="number" id="classWork">
+    <button onclick="water()" id="button1">order</button>
+    </div>
+
+<hr>
+    <div id="order2">
+    <div id="juice"></div>
+    <p id="drink"></p>
+    <input type="number" id="classWork2">
+    <button onclick="juice()" id="button2">order</button>
+    </div>
+
+    
+    <hr>
+   <input type="number" id="classWork3">
+    <button onclick="gatorade()" id="button3">order</button>
+    <div id="order3">
+          <div id="juice1"></div>
+    <p id="gatorade"></p>
+      <img id="gator" src="https://images-na.ssl-images-amazon.com/images/I/81oG%2BClh3nL._SY450_.jpg">
+    </div>
+
+    <hr>
+    <button onclick ="getTotal()">Checkout</button>
+    
+  </body>
+</html>
